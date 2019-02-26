@@ -26,7 +26,7 @@ namespace RTSPRedirect
             }
 
             // Check if the RTSP URL is for a multicast stream
-            var isMulticast = urlFromDataSource.Contains("multicast=true");
+            var isMulticast = urlFromDataSource.Contains("multicast=true") || urlFromDataSource.Contains("transport_type=UDP_MULTICAST");
 
             // Create the communication socket
             var socket = CreateSocket(urlFromDataSource, ref errorMessage);
